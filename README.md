@@ -111,7 +111,7 @@ npm run dev
 
 **Viresh Hubballi**  
 Final Year CSE Student
-Email: your.email@example.com  
+Email: vireshhubballi909@gmail.com  
 LinkedIn: [linkedin.com/in/vireshhuballi](https://linkedin.com/in/vireshhubballi)
 
 ---
