@@ -1,83 +1,86 @@
+// api.js
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api';
-
-// Create axios instance with default config
-const apiClient = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json'
-  }
+// Create Axios instance
+const API = axios.create({
+  baseURL: 'http://localhost:8080/api',
+  withCredentials: true,
 });
 
-// Request interceptor for adding auth token
-apiClient.interceptors.request.use(
-  config => {
+// Add request interceptor to include JWT token
+API.interceptors.request.use(
+  (config) => {
     const token = localStorage.getItem('token');
     if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  error => Promise.reject(error)
+  (error) => Promise.reject(error)
 );
 
-// Authentication services
-export const authService = {
-  // Modified to return a properly structured promise
-  login: async (credentials) => {
-    try {
-      console.log("authService.login called with:", credentials);
-      const response = await apiClient.post('/auth/login', credentials);
-      console.log("login response from server:", response);
-      return response;
-    } catch (error) {
-      console.error("Error in authService.login:", error);
-      throw error; // Re-throw to let component handle it
+// Add response interceptor to handle auth errors
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 403) {
+      console.log('Authentication error. You may need to log in again.');
+      // Optional:
+      // localStorage.removeItem('token');
+      // window.location.href = '/login';
     }
-  },
-  signup: (userData) => apiClient.post('/auth/signup', userData),
-  logout: () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-  },
-  getCurrentUser: () => {
-    const user = localStorage.getItem('user');
-    return user ? JSON.parse(user) : null;
+    return Promise.reject(error);
+  }
+);
+
+// Exported signup function
+export const signup = async (userData) => {
+  try {
+    const response = await API.post('/auth/signup', userData);
+    return response.data;
+  } catch (error) {
+    throw error;
   }
 };
 
-// Financial data services
-export const financialService = {
-  getUserProfile: () => apiClient.get('/financial/profile'),
-  updateUserProfile: (data) => apiClient.put('/financial/profile', data),
-  
-  getGoals: () => apiClient.get('/financial/goals'),
-  createGoal: (goal) => apiClient.post('/financial/goals', goal),
-  updateGoal: (id, goal) => apiClient.put(`/financial/goals/${id}`, goal),
-  deleteGoal: (id) => apiClient.delete(`/financial/goals/${id}`),
+// Exported login function
+export const login = async (credentials) => {
+  try {
+    const response = await API.post('/auth/login', credentials);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+// Gemini API Instance
+const GeminiAPI = axios.create({
+  baseURL: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
-  getTransactions: (params) => apiClient.get('/financial/transactions', { params }),
-  addTransaction: (transaction) => apiClient.post('/financial/transactions', transaction),
-
-  getBudget: () => apiClient.get('/financial/budget'),
-  updateBudget: (budget) => apiClient.put('/financial/budget', budget),
-
-  getPredictions: () => apiClient.get('/ml/predictions'),
-  getInvestmentSuggestions: () => apiClient.get('/ml/investment-suggestions'),
-  getSavingsSuggestions: () => apiClient.get('/ml/savings-suggestions'),
-  getBudgetRecommendations: () => apiClient.get('/ml/budget-recommendations')
+// Function to call Gemini
+export const generatePrediction = async (prompt) => {
+  try {
+    const response = await GeminiAPI.post(
+      `?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
+      {
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: prompt }],
+          },
+        ],
+      }
+    );
+    const aiText = response.data.candidates[0].content.parts[0].text;
+    return aiText;
+  } catch (error) {
+    console.error("Gemini API error:", error);
+    throw error;
+  }
 };
 
-// Export login separately with correct parameter structure
-export const login = async (email, password) => {
-  console.log("standalone login function called");
-  return authService.login({ email, password });
-};
-
-// Removed potentially conflicting signup function
-
-export default {
-  auth: authService,
-  financial: financialService
-};
+// Default export of Axios instance for general use
+export default API;

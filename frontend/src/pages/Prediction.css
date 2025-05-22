@@ -1,0 +1,95 @@
+.prediction-container {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .input-form input, 
+  .input-form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .input-form button {
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .prediction-results {
+    margin-top: 30px;
+  }
+  
+  .charts-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .ai-tips-section {
+    margin-top: 30px;
+  }
+  
+  .tips-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .tip-card {
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    width: 220px;
+  }
+  
+  .save-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .save-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .compare-card {
+    margin-top: 20px;
+  }
+  

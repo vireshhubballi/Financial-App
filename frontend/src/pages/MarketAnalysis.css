@@ -1,0 +1,171 @@
+/* MarketAnalysis.css */
+.market-analysis-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #f4f6f8;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+li strong {
+  color: #222;
+}
+
+/* AI Market Sentiment */
+.ai-sentiment p {
+  font-size: 1.3rem;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+}
+
+/* Fear & Greed Index Gauge */
+.fear-greed .gauge {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(90deg, #dc3545 0%, #ffc107 50%, #28a745 100%);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Risk-O-Meter Gauge */
+.risk-meter .gauge {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.risk-meter.low .gauge {
+  background-color: #28a745; /* Green */
+}
+
+.risk-meter.moderate .gauge {
+  background-color: #ffc107; /* Yellow */
+}
+
+.risk-meter.high .gauge {
+  background-color: #dc3545; /* Red */
+}
+
+/* Analyst Consensus Table */
+.analyst-consensus table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.analyst-consensus th,
+.analyst-consensus td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.analyst-consensus th {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.analyst-consensus td {
+  font-size: 1.1rem;
+}
+
+/* Portfolio Protection Tips */
+.portfolio-tips ul {
+  padding-left: 20px;
+}
+
+.portfolio-tips li {
+  list-style-type: disc;
+}
+
+/* Geo-Market Radar Placeholder */
+.geo-market {
+  text-align: center;
+}
+
+.geo-placeholder {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 10px;
+  color: #6c757d;
+}
+
+.small-note {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #888;
+}
+
+/* Compare Stocks/Crypto Placeholder */
+.compare-assets {
+  text-align: center;
+}
+
+.compare-placeholder {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 10px;
+  color: #6c757d;
+}
+
+/* Smooth transitions */
+.section,
+h3,
+li {
+  transition: all 0.3s ease-in-out;
+}
+
+h3:hover {
+  color: #0056b3;
+  cursor: pointer;
+}

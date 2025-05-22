@@ -1,23 +1,20 @@
-// pages/Dashboard.jsx
+// src/pages/Dashboard.jsx
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../context/AuthContext.jsx';
-// Change the import to be more specific to avoid naming conflicts
-import DashboardWidget from '../components/DashBoardWidget'; // Renamed import
+import { useNavigate } from "react-router-dom";
+import { AuthContext, useLogout } from '../context/AuthContext.jsx';
+import DashboardWidget from '../components/DashBoardWidget';
 
 const Dashboard = () => {
   const { user, isAuthenticated, loading } = useContext(AuthContext);
   const [financialData, setFinancialData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const logout = useLogout();
 
   useEffect(() => {
-    // Fetch financial data for the dashboard
     const fetchFinancialData = async () => {
       try {
-        // You would replace this with an actual API call
-        // For example: const data = await getFinancialData(user.id);
-        
-        // Simulating API response
         const mockData = {
           balance: 25000,
           expenses: 1200,
@@ -28,7 +25,6 @@ const Dashboard = () => {
             { id: 3, description: 'Groceries', amount: -120, type: 'expense', date: '2025-03-05' }
           ]
         };
-        
         setFinancialData(mockData);
       } catch (err) {
         console.error('Error fetching financial data:', err);
@@ -53,8 +49,12 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-page">
-      <h1>Welcome, {user?.name || 'User'}!</h1>
-      
+      <div className="dashboard-header">
+        <h1>Welcome, {user?.name || 'User'}!</h1>
+
+        
+      </div>
+
       {financialData && (
         <DashboardWidget 
           balance={financialData.balance}

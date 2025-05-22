@@ -1,0 +1,209 @@
+/* Container */
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+  }
+  
+  /* Title */
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  /* Featured Companies */
+  .featured-companies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .featured-companies a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .featured-companies a:hover {
+    background-color: #f0f7ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .featured-companies img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+  
+  .featured-companies span {
+    font-size: 1rem;
+    font-weight: medium;
+  }
+  
+  /* Investment Form */
+  .investment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .investment-form input,
+  .investment-form select,
+  .investment-form button {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+  }
+  
+  .investment-form input:focus,
+  .investment-form select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .investment-form button {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .investment-form button:hover {
+    background-color: #218838;
+  }
+  
+  /* Charts */
+  .chart-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .chart-container h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Returns and ROI */
+  .returns-roi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background-color: #e7f4ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .returns-roi div {
+    text-align: center;
+  }
+  
+  .returns-roi h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .returns-roi p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Market News */
+  .market-news {
+    background-color: #fff3cd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .market-news h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .market-news a {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  .market-news a:hover {
+    color: #0056b3;
+  }
+  
+  /* AI Tips */
+  .ai-tips {
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .ai-tips h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .ai-tips ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .ai-tips li {
+    margin-bottom: 1rem;
+  }
+  
+  /* Investment List */
+  .investment-list {
+    margin-top: 2rem;
+  }
+  
+  .investment-list h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .investment-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .investment-list li {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+  
+  .investment-list li p {
+    margin: 0.5rem 0;
+  }
+  
+  /* Loading State */
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  

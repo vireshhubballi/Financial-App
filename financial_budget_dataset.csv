@@ -1,0 +1,7 @@
+user_id,month,category,amount,income,priority,description,total_expense_month,savings,risk_level
+1,January,Food,5000,20000,High,Groceries,15000,5000,Medium
+1,January,Rent,8000,20000,High,Monthly rent,15000,5000,Medium
+2,February,Travel,3000,10000,Medium,Trip,8500,1500,High
+2,February,Health,4000,10000,Medium,Medical,8500,1500,High
+3,March,Entertainment,2000,15000,Low,Movies,12000,3000,Low
+3,March,Utilities,2500,15000,Medium,Electricity bill,12000,3000,Low

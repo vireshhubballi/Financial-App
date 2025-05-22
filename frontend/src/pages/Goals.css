@@ -1,0 +1,142 @@
+/* src/styles/Goals.css */
+
+.goals-container {
+    margin-top: 80px; /* Adjust if navbar is taller */
+    padding: 24px;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f9fafb;
+    min-height: 100vh;
+  }
+  
+  .goals-header {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1f2937; /* gray-800 */
+  }
+  
+  .goal-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb; /* gray-200 */
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .goal-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+  }
+  
+  .goal-info {
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+  
+  .goal-info h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .goal-info p {
+    font-size: 0.9rem;
+    margin: 0.1rem 0;
+  }
+  
+  .goal-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .goal-actions button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .goal-actions .edit-btn {
+    background-color: #facc15; /* yellow-400 */
+  }
+  
+  .goal-actions .edit-btn:hover {
+    background-color: #fbbf24; /* yellow-500 */
+  }
+  
+  .goal-actions .delete-btn {
+    background-color: #ef4444; /* red-500 */
+  }
+  
+  .goal-actions .delete-btn:hover {
+    background-color: #dc2626; /* red-600 */
+  }
+  
+  .goal-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .goal-edit-form input,
+  .goal-edit-form textarea,
+  .goal-edit-form select {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db; /* gray-300 */
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+  
+  .goal-edit-form input:focus,
+  .goal-edit-form textarea:focus,
+  .goal-edit-form select:focus {
+    outline: none;
+    border-color: #2563eb; /* blue-600 */
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+  }
+  
+  .goal-edit-form label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .save-btn {
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .save-btn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .goal-card-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .goal-info {
+      width: 75%;
+    }
+  
+    .goal-actions {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
+  }
+  
